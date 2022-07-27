@@ -1,4 +1,4 @@
-export default function TodoItem({ todoItem, onItemDelete, onTodoUpdate }) {
+export default function TodoItem({ todoItem, onTodoDelete, onTodoUpdate }) {
   const { id, completed, title } = todoItem;
   return (
     <li style={{ backgroundColor: getStyle(completed) }} onClick={() => onTodoUpdate(id)}>
@@ -6,7 +6,7 @@ export default function TodoItem({ todoItem, onItemDelete, onTodoUpdate }) {
       <button
         onClick={(e) => {
           e.stopPropagation();
-          onItemDelete(id);
+          onTodoDelete(id);
         }}
       >
         Delete

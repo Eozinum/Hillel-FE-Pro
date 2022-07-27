@@ -57,7 +57,7 @@ export default function TodoList() {
       <ul>
         {todoList.map((todoItem) => {
           return (
-            <TodoItem key={todoItem.id} onTodoUpdate={onTodoUpdate} onItemDelete={onTodoDelete} todoItem={todoItem} />
+            <TodoItem key={todoItem.id} onTodoUpdate={onTodoUpdate} onTodoDelete={onTodoDelete} todoItem={todoItem} />
           );
         })}
       </ul>
