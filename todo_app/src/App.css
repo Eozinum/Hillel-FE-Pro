@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+  width: 400px;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  border-bottom: 3px solid #fdfbfb;
+}
+
+ul {
+  width: 400px;
+}
+
+button {
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #fcfcfc;
+  outline: #01b2f8 solid 1px;
+}
+
+button:hover {
+  background-color: rgb(162, 216, 220);
+}
+
+input[type="text"] {
+  border-radius: 5px;
+  border-width: 1px;
+  height: 20px;
+  width: 350px
+}
+
+form {
+  width: 400px;
+  padding-left: 40px;
+}
+
+h2 {
+  text-align: center;
+  padding-left: 80px;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+}
