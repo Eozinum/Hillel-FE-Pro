@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+}
+
+.noteboard-header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #234f27;
+  color: #e2f8e5;
+  margin-bottom: 20px;
+}
+
+.all-notes {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.note-item {
+  position: relative;
+  width: 160px;
+  height: 200px;
+  border: 1px solid #234f27;
+  border-radius: 4px;
+  margin: 10px;
+  background-color: #bec8bd;
+}
+
+.add-note-btn {
+  border: 1px solid green;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+  background-color: #234f27;
+  color: #e2f8e5;
+}
+
+.note-item-textarea{
+  border: 1px solid green;
+  margin: 5px;
+  padding: 5px;
+  width: 135px;
+  height: 140px;
+  outline: none;
+}
+
+.note-delete-item {
+  border: 1px solid green;
+  background-color: rgb(228, 240, 228);
+  border-radius: 50%;
+  padding: 3px 8px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+.note-delete-item:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.note-save-item {
+  border: 1px solid green;
+  background-color: rgb(228, 240, 228);
+  border-radius: 4px;
+  padding: 4px 8px;
+  
+}
+
+.note-save-item:hover, .add-note-btn:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
