@@ -1,7 +1,4 @@
-// import React from 'react';
 import { useState, useEffect, useCallback } from 'react';
-import API_URL from '../constants';
-import axios from 'axios';
 import API from '../constants/index';
 
 const NEW_NOTE = {
@@ -10,6 +7,7 @@ const NEW_NOTE = {
 
 export const useNotes = () => {
   const [notes, setNotes] = useState([]);
+
   useEffect(() => {
     API.get().then(({ data }) => {
       setNotes(data);
@@ -21,12 +19,6 @@ export const useNotes = () => {
       setNotes((prevNotes) => [...prevNotes, data]);
     });
   }, [notes]);
-
-  // const addNewNote = () => {
-  //   api.post('', NEW_NOTE).then(({ data }) => {
-  //     setNotes((prevNotes) => [...prevNotes, data]);
-  //   });
-  // };
 
   const deleteNote = (id) => {
     API.delete(id);
