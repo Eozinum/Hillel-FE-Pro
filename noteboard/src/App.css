@@ -8,9 +8,36 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.noteboard-header.light {
   background-color: #677b69;
   color: #e2f8e5;
 }
+.noteboard-header.light > .add-note-btn {
+  background-color: #677b69;
+  color: #e2f8e5;
+}
+
+.noteboard-header.light > .change-theme-btn {
+  background-color: #677b69;
+  color: #e2f8e5;
+}
+
+.noteboard-header.dark {
+  background-color: #29332a;
+  color: #a6baa9;
+}
+
+.noteboard-header.dark > .add-note-btn {
+  background-color: #29332a;
+  color: #a6baa9;
+}
+ .noteboard-header.dark > .change-theme-btn {
+  background-color: #29332a;
+  color: #a6baa9;
+ }
+
 
 .all-notes {
   display: flex;
@@ -18,30 +45,30 @@
   flex-wrap: wrap;
   padding: 40px 0;
 }
-.theme-light {
+.all-notes.light {
   background-color: #e9efe9;
 }
-.theme-dark {
+.all-notes.dark {
   background-color: #425840;
 }
 
-.theme-light > .note-item {
+ .note-item.light{
   background-color: #bec8bd;
   border: 1px solid #234f27;
 }
 
-.theme-dark > .note-item {
+.note-item.dark{
   border: 1px solid #798e7a;
   background-color: #20381e;
 }
 
-.theme-dark > .note-item > .note-delete-item {
+.note-item.dark > .note-delete-item {
   border: 1px solid #798e7a;
   background-color: #20381e;
   color: #b0c2ae;
 }
 
-.theme-dark> .note-item> div > .note-save-item {
+.note-item.dark > div > .note-save-item {
   border: 1px solid #798e7a;
   background-color: #20381e;
   color: #b0c2ae;
@@ -56,13 +83,12 @@
 
 }
 
+
 .add-note-btn, .change-theme-btn {
-  border: 1px solid #e4ece4;
+  border: 1px solid #b6c3b6;;
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 16px;
-  background-color: #677b69;
-  color: #e2f8e5;
 }
 
 .note-item-textarea{
