@@ -8,33 +8,60 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #234f27;
+  background-color: #677b69;
   color: #e2f8e5;
-  margin-bottom: 20px;
 }
 
 .all-notes {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  padding: 40px 0;
+}
+.theme-light {
+  background-color: #e9efe9;
+}
+.theme-dark {
+  background-color: #425840;
+}
+
+.theme-light > .note-item {
+  background-color: #bec8bd;
+  border: 1px solid #234f27;
+}
+
+.theme-dark > .note-item {
+  border: 1px solid #798e7a;
+  background-color: #20381e;
+}
+
+.theme-dark > .note-item > .note-delete-item {
+  border: 1px solid #798e7a;
+  background-color: #20381e;
+  color: #b0c2ae;
+}
+
+.theme-dark> .note-item> div > .note-save-item {
+  border: 1px solid #798e7a;
+  background-color: #20381e;
+  color: #b0c2ae;
 }
 
 .note-item {
   position: relative;
   width: 160px;
   height: 200px;
-  border: 1px solid #234f27;
   border-radius: 4px;
   margin: 10px;
-  background-color: #bec8bd;
+
 }
 
-.add-note-btn {
-  border: 1px solid green;
+.add-note-btn, .change-theme-btn {
+  border: 1px solid #e4ece4;
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 16px;
-  background-color: #234f27;
+  background-color: #677b69;
   color: #e2f8e5;
 }
 
@@ -56,10 +83,6 @@
   top: -15px;
   right: -15px;
 }
-.note-delete-item:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
 
 .note-save-item {
   border: 1px solid green;
@@ -69,7 +92,10 @@
   
 }
 
-.note-save-item:hover, .add-note-btn:hover {
+.note-save-item:hover, 
+.add-note-btn:hover, 
+.note-delete-item:hover, 
+.change-theme-btn:hover {
   cursor: pointer;
   opacity: 0.5;
 }
