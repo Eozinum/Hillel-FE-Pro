@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 20px 0;
 }
 
 .noteboard-header.light {
@@ -44,6 +45,7 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 40px 0;
+  height: 100vh;
 }
 .all-notes.light {
   background-color: #e9efe9;
@@ -68,11 +70,19 @@
   color: #b0c2ae;
 }
 
-.note-item.dark > div > .note-save-item {
+.note-item.dark > div > .note-edit-item {
   border: 1px solid #798e7a;
   background-color: #20381e;
   color: #b0c2ae;
 }
+
+.note-item.dark>div>.note-item-text {
+  color: #d6e2d5;
+}
+
+ .note-item.light>div>.note-item-text {
+  color: #1c201c;
+ }
 
 .note-item {
   position: relative;
@@ -91,8 +101,7 @@
   font-size: 16px;
 }
 
-.note-item-textarea{
-  border: 1px solid green;
+.note-item-text{
   margin: 5px;
   padding: 5px;
   width: 135px;
@@ -110,7 +119,7 @@
   right: -15px;
 }
 
-.note-save-item {
+.note-edit-item {
   border: 1px solid green;
   background-color: rgb(228, 240, 228);
   border-radius: 4px;
@@ -118,7 +127,7 @@
   
 }
 
-.note-save-item:hover, 
+.note-edit-item:hover, 
 .add-note-btn:hover, 
 .note-delete-item:hover, 
 .change-theme-btn:hover {
@@ -126,3 +135,48 @@
   opacity: 0.5;
 }
 
+.edit-item {
+ height: 100vh;
+}
+
+.edit-item.light {
+  background-color: #e9efe9;
+}
+
+.edit-item.dark {
+  background-color: #425840;
+}
+
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.edit-input {
+  width: 200px;
+  height: 200px;
+}
+
+.edit-btn {
+  padding: 5px;
+  width: 207px;
+  margin: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.edit-btn.light {
+  background-color: #677b69;
+  color: #e2f8e5; 
+}
+
+.edit-btn.dark {
+  background-color: #29332a;
+  color: #ecffef;
+}
+ 

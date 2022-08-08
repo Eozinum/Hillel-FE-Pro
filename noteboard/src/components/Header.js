@@ -7,9 +7,9 @@ export const Header = ({ onNoteAddClick }) => {
   return (
     <div className={`noteboard-header ${theme}`}>
       NoteBoard
-      <span className="add-note-btn" onClick={onNoteAddClick}>
+      <button className="add-note-btn" onClick={onNoteAddClick}>
         Add new Note
-      </span>
+      </button>
       <button className="change-theme-btn" onClick={toggleTheme}>
         Change theme
       </button>

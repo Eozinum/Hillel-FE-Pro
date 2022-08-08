@@ -25,16 +25,9 @@ export const useNotes = () => {
     setNotes(notes.filter((item) => item.id !== id));
   };
 
-  const editNote = (note) => {
-    API.put(note.id, note).then(({ data }) =>
-      setNotes((notes) => notes.map((item) => (item.id === note.id ? data : item)))
-    );
-  };
-
   return {
     notes,
     addNewNote,
     deleteNote,
-    editNote,
   };
 };

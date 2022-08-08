@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { NoteBoard } from './components/NoteBoard';
 import { ThemeProvider } from './context/ThemeProvider';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { Note } from './components/Note';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { NoteEdit } from './components/NoteEdit';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
               </div>
             }
           />
+          <Route path="/notes/:id" element={<NoteEdit />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
