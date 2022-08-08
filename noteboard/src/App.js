@@ -18,7 +18,7 @@ function App() {
               </div>
             }
           />
-          <Route path="/notes/:id" element={<NoteEdit />} />
+          <Route path="/note/:id" element={<NoteEdit />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

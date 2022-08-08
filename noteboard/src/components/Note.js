@@ -13,7 +13,7 @@ export const Note = ({ note, onDelete }) => {
       </span>
       <div>
         <div className="note-item-text">{description}</div>
-        <Link to={`notes/${note.id}`}>
+        <Link to={`/note/${note.id}`}>
           <button className="note-edit-item">Edit</button>
         </Link>
       </div>
