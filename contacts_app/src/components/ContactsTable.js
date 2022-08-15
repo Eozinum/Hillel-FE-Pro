@@ -1,8 +1,8 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { ContactsList } from './ContactsList';
 import { getUsers, deleteUser } from '../services/services';
 import { useNavigate } from 'react-router-dom';
+import { Button, Paper, Table, TableBody, TableCell, TableRow, TableHead, TableContainer } from '@mui/material';
 
 export const ContactsTable = () => {
   const [contacts, setContacts] = useState([]);
@@ -12,9 +12,9 @@ export const ContactsTable = () => {
     getUsers().then(({ data }) => setContacts(data));
   }, []);
 
-  const onDeleteContact = (contact) => {
-    deleteUser(contact.id);
-    setContacts(contacts.filter((item) => item.id !== contact.id));
+  const onDeleteContact = async (id) => {
+    await deleteUser(id);
+    setContacts(contacts.filter((contact) => contact.id !== id));
   };
   const onAddContact = () => {
     redirect('/contact/create');
@@ -22,19 +22,25 @@ export const ContactsTable = () => {
 
   return (
     <>
-      <span onClick={onAddContact}>ADD NEW CONTACT</span>
-      <table>
-        <tbody>
-          <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>SURNAME</th>
-            <th>PHONE</th>
-            <th>CHANGE</th>
-          </tr>
-          <ContactsList contacts={contacts} onDelete={onDeleteContact} />
-        </tbody>
-      </table>
+      <Button sx={{ margin: '20px 0' }} size="large" variant="contained" color="warning" onClick={onAddContact}>
+        ADD NEW CONTACT
+      </Button>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">ID</TableCell>
+              <TableCell align="center">NAME</TableCell>
+              <TableCell align="center">SURNAME</TableCell>
+              <TableCell align="center">PHONE</TableCell>
+              <TableCell align="center">CHANGE</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <ContactsList contacts={contacts} onDelete={onDeleteContact} />
+          </TableBody>
+        </Table>
+      </TableContainer>
     </>
   );
 };

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addUser } from '../services/services';
 
+import { Button, ButtonGroup, Box, TextField } from '@mui/material';
+
 export const ContactCreateForm = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
@@ -31,12 +33,25 @@ export const ContactCreateForm = () => {
   };
 
   return (
-    <form>
-      <input value={name} onChange={onNameChange} />
-      <input value={surname} onChange={onSurnameChange} />
-      <input value={phone} onChange={onPhoneChange} />
-      <button onClick={onSave}>Save</button>
-      <button onClick={onCancel}>Cancel</button>
-    </form>
+    <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 2, width: '35ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <TextField color="warning" label="Name" onChange={onNameChange} />
+      <TextField color="warning" label="Surname" onChange={onSurnameChange} />
+      <TextField color="warning" label="Phone" onChange={onPhoneChange} />
+      <ButtonGroup>
+        <Button color="success" onClick={onSave}>
+          Save
+        </Button>
+        <Button color="warning" onClick={onCancel}>
+          Cancel
+        </Button>
+      </ButtonGroup>
+    </Box>
   );
 };

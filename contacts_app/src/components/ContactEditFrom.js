@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { getUser, editUser } from '../services/services';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Button, ButtonGroup, Box, TextField } from '@mui/material';
 
 export const ContactEditForm = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ export const ContactEditForm = () => {
       setSurname(data.surname);
       setPhone(data.phone);
     });
-  }, []);
+  }, [id]);
 
   const onNameChange = (e) => {
     setName(e.target.value);
@@ -40,12 +41,25 @@ export const ContactEditForm = () => {
   };
 
   return (
-    <form>
-      <input value={name} onChange={onNameChange} />
-      <input value={surname} onChange={onSurnameChange} />
-      <input value={phone} onChange={onPhoneChange} />
-      <button onClick={onSave}>Save</button>
-      <button onClick={onCancel}>Cancel</button>
-    </form>
+    <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 2, width: '35ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <TextField color="warning" label="Name" value={name} onChange={onNameChange} />
+      <TextField label="Surname" color="warning" value={surname} onChange={onSurnameChange} />
+      <TextField label="Phone" color="warning" value={phone} onChange={onPhoneChange} />
+      <ButtonGroup variant="outlined">
+        <Button color="success" onClick={onSave}>
+          Save
+        </Button>
+        <Button color="warning" onClick={onCancel}>
+          Cancel
+        </Button>
+      </ButtonGroup>
+    </Box>
   );
 };
