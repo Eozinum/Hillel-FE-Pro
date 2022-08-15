@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { getUser, editUser } from '../services/services';
+import { getContact, editContact } from '../services/services';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button, ButtonGroup, Box, TextField } from '@mui/material';
 
@@ -11,7 +11,7 @@ export const ContactEditForm = () => {
   const [phone, setPhone] = useState('');
   const redirect = useNavigate();
   useEffect(() => {
-    getUser(id).then(({ data }) => {
+    getContact(id).then(({ data }) => {
       setName(data.name);
       setSurname(data.surname);
       setPhone(data.phone);
@@ -32,8 +32,7 @@ export const ContactEditForm = () => {
 
   const onSave = (e) => {
     e.preventDefault();
-    editUser(id, { name, surname, phone });
-    redirect('/contacts');
+    editContact(id, { name, surname, phone }).then(() => redirect('/contacts'));
   };
 
   const onCancel = (e) => {

@@ -1,19 +1,23 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ContactsList } from './ContactsList';
-import { getUsers, deleteUser } from '../services/services';
+import { getContacts, deleteContact } from '../services/services';
 import { useNavigate } from 'react-router-dom';
 import { Button, Paper, Table, TableBody, TableCell, TableRow, TableHead, TableContainer } from '@mui/material';
 
 export const ContactsTable = () => {
   const [contacts, setContacts] = useState([]);
   const redirect = useNavigate();
+  const hasLoaded = useRef(false);
 
   useEffect(() => {
-    getUsers().then(({ data }) => setContacts(data));
+    if (hasLoaded.current === true) return;
+
+    hasLoaded.current = true;
+    getContacts().then(({ data }) => setContacts(data));
   }, []);
 
   const onDeleteContact = async (id) => {
-    await deleteUser(id);
+    await deleteContact(id);
     setContacts(contacts.filter((contact) => contact.id !== id));
   };
   const onAddContact = () => {

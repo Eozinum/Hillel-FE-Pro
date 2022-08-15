@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addUser } from '../services/services';
+import { addContact } from '../services/services';
 
 import { Button, ButtonGroup, Box, TextField } from '@mui/material';
 
@@ -28,8 +28,7 @@ export const ContactCreateForm = () => {
 
   const onSave = (e) => {
     e.preventDefault();
-    addUser({ name, surname, phone });
-    redirect('/contacts');
+    addContact({ name, surname, phone }).then(() => redirect('/contacts'));
   };
 
   return (
