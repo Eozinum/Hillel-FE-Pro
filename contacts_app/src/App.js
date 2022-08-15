@@ -7,11 +7,15 @@ import Button from '@mui/material/Button';
 function App() {
   const redirect = useNavigate();
   return (
-    <header>
-      <Button size="large" color="success" variant="contained" onClick={() => redirect('/contacts')}>
-        CONTACTS
-      </Button>
-    </header>
+    <Button
+      sx={{ marginTop: '3%' }}
+      size="large"
+      color="success"
+      variant="contained"
+      onClick={() => redirect('/contacts')}
+    >
+      CONTACTS
+    </Button>
   );
 }
 
